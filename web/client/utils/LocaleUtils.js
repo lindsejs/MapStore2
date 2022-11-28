@@ -22,8 +22,9 @@ const vi = require('react-intl/locale-data/vi');
 const fi = require('react-intl/locale-data/fi');
 const sv = require('react-intl/locale-data/sv');
 const sk = require('react-intl/locale-data/sk');
+const lv = require('react-intl/locale-data/lv');
 
-addLocaleData([...en, ...it, ...fr, ...de, ...es, ...nl, ...zh, ...hr, ...pt, ...vi, ...fi, ...sv, ...sk]);
+addLocaleData([...en, ...it, ...fr, ...de, ...es, ...nl, ...zh, ...hr, ...pt, ...vi, ...fi, ...sv, ...sk, ...lv]);
 
 /*
  * it, en, fr, de, es are the default locales and it is preferrable to customize them via configuration.
@@ -103,7 +104,7 @@ let errorParser = {};
  */
 let LocaleUtils;
 export const ensureIntl = (callback) => {
-    require.ensure(['intl', 'intl/locale-data/jsonp/en.js', 'intl/locale-data/jsonp/it.js', 'intl/locale-data/jsonp/fr.js', 'intl/locale-data/jsonp/de.js', 'intl/locale-data/jsonp/es.js', 'intl/locale-data/jsonp/nl.js', 'intl/locale-data/jsonp/zh.js', 'intl/locale-data/jsonp/hr.js', 'intl/locale-data/jsonp/vi.js', 'intl/locale-data/jsonp/fi.js', 'intl/locale-data/jsonp/sv.js', 'intl/locale-data/jsonp/sk.js'], (require) => {
+    require.ensure(['intl', 'intl/locale-data/jsonp/en.js', 'intl/locale-data/jsonp/it.js', 'intl/locale-data/jsonp/fr.js', 'intl/locale-data/jsonp/de.js', 'intl/locale-data/jsonp/es.js', 'intl/locale-data/jsonp/nl.js', 'intl/locale-data/jsonp/zh.js', 'intl/locale-data/jsonp/hr.js', 'intl/locale-data/jsonp/vi.js', 'intl/locale-data/jsonp/fi.js', 'intl/locale-data/jsonp/sv.js', 'intl/locale-data/jsonp/sk.js', 'intl/locale-data/jsonp/lv.js'], (require) => {
         global.Intl = require('intl');
         require('intl/locale-data/jsonp/en.js');
         require('intl/locale-data/jsonp/it.js');
@@ -118,6 +119,7 @@ export const ensureIntl = (callback) => {
         require('intl/locale-data/jsonp/fi.js');
         require('intl/locale-data/jsonp/sv.js');
         require('intl/locale-data/jsonp/sk.js');
+        require('intl/locale-data/jsonp/lv.js');
         if (callback) {
             callback();
         }
